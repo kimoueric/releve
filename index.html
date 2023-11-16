@@ -93,7 +93,7 @@
             <thead>
               <tr>
                 <th>Dates</th>
-                <th colspan="">Operations</th>
+                <th>Operations</th>
                 <th>Debits</th>
                 <th>Credits</th>
               </tr>
@@ -143,23 +143,21 @@
               </tr>
             </tbody>
             <tfoot>
-              <table class="table table-bordered border-dark">
-                <tr>
-                  <td>Total des operations</td>
-                  <th class="text-center" id="total-debit">45000</th>
-                  <th class="text-center" id="total-credit">80000</th>
-                </tr>
-                <tr>
-                  <td colspan="2">
-                    <span>Solde final</span>
-                    <span>au</span>
-                    <span id="jour-solde-final">28</span>
-                    <span id="mois-solde-final">fevrier</span>
-                    <span id="annee-solde-final">2023</span>
-                  </td>
-                  <th class="text-center" id="solde-final">35000</th>
-                </tr>
-              </table>
+              <tr>
+                <td colspan="2" class="text-start">Total des operations</td>
+                <th class="text-center" id="total-debit" colspan="">45000</th>
+                <th class="text-center" id="total-credit" colspan="">80000</th>
+              </tr>
+              <tr>
+                <td colspan="2" class="text-start">
+                  <span>Solde final</span>
+                  <span>au</span>
+                  <span id="jour-solde-final">28</span>
+                  <span id="mois-solde-final">fevrier</span>
+                  <span id="annee-solde-final">2023</span>
+                </td>
+                <th class="text-center" id="solde-final" colspan="2">35000</th>
+              </tr>
             </tfoot>
           </table>
         </div>
