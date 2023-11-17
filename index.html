@@ -8,214 +8,153 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="releve-container container w-50 my-2 rounded rounded-5">
-      <!-- Entete du releve -->
-      <div class="header d-flex justify-content-between py-2">
-        <!-- Entete du releve (gauche)-->
-        <div class="container left">
-          <!-- Partie logo et nom de la banque -->
-          <div class="d-flex align-items-start w-75">
-            <img src="./assets/boa.jpeg" alt="logo" width="145px" />
-            <div class="name-bank">
-              <!-- <h6 id="nom-banque">BANK OF AFRICA</h6> -->
-            </div>
-          </div>
-          <div class="others">
-            <div>
-              <span>Agence : </span
-              ><span class="" id="agence">Dioulabougou</span>
-            </div>
-
-            <div>
-              <span>Siege : </span><span class="" id="siege">Cocody Angre</span>
-            </div>
-
-            <div>
-              <span>IBAN : </span><span class="" id="iban">454545121</span>
-            </div>
-
-            <div><span>BIC : </span><span class="" id="bic">ggffs4</span></div>
-
-            <div>
-              <span>N de compte : </span
-              ><span class="" id="n-compte">4545451212</span>
-            </div>
-
-            <div>
-              <span>Devise de compte : </span
-              ><span class="" id="devise">CFA</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Entete du releve (droit)-->
-        <div
-          class="container right d-flex justify-content-start align-items-end flex-column"
-        >
-          <div class="pt-5 mt-3">
-            <span>Releve de compte </span
-            ><span class="" id="type-releve">Epargne</span>
-          </div>
-          <div>
-            <span>du</span>
-            <span id="jour-debut-periode-transaction">1</span>
-            <span>au</span>
-            <span id="jour-fin-periode-transaction">28</span>
-            <span id="mois-periode-transaction">fevrier</span>
-            <span id="annee-periode-transaction">2024</span>
-          </div>
-
-          <div class="client pt-5 mt-3">
-            <div>
-              <span>M/Mme </span
-              ><span id="nom-client">Kimou N'cho Guy-Eric</span>
-            </div>
-
-            <div>
-              <span>Adresse : </span
-              ><span id="adresse-client">Yamoussoukro</span>
-            </div>
-
-            <div>
-              <span>N client : </span><span id="numero-client">0544542532</span>
-            </div>
-          </div>
-        </div>
+    <div class="container d-flex">
+      <div class="d-flex align-items-center justify-content-center">
+        type
+        <form action="">
+          <select id="choix-type"></select>
+          <button class="btn btn-primary" type="submit">Soumettre</button>
+        </form>
       </div>
-      <!-- Fin entete du releve -->
 
-      <!-- Corps du releve -->
-      <div class="container body mt-3">
-        <div>
-          <table
-            class="table table-white table-striped table-bordered border-dark text-center"
+      <div
+        class="releve-container container w-50 my-2 rounded rounded-5 border border-dark"
+      >
+        <!-- Entete du releve -->
+        <div class="header d-flex justify-content-between py-2">
+          <!-- Entete du releve (gauche)-->
+          <div class="container left">
+            <!-- Partie logo et nom de la banque -->
+            <div class="d-flex align-items-start logo">
+              <img src="./assets/boa.jpeg" class="w-50" id="logo-image" />
+              <div class="name-bank">
+                <!-- <h6 id="nom-banque">BANK OF AFRICA</h6> -->
+              </div>
+            </div>
+            <div class="others">
+              <div>
+                <span>Agence : </span><span class="" id="agence"></span>
+              </div>
+
+              <div><span>Siege : </span><span class="" id="siege"></span></div>
+
+              <div><span>IBAN : </span><span class="" id="iban"></span></div>
+
+              <div><span>BIC : </span><span class="" id="bic"></span></div>
+
+              <div>
+                <span>N de compte : </span><span class="" id="n-compte"></span>
+              </div>
+
+              <div>
+                <span>Devise de compte : </span
+                ><span class="" id="devise"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Entete du releve (droit)-->
+          <div
+            class="container right d-flex justify-content-start align-items-end flex-column"
           >
+            <div class="pt-5 mt-3">
+              <span>Releve de compte </span
+              ><span class="" id="type-releve"></span>
+            </div>
+            <div>
+              <span>du</span>
+              <span id="periode"></span>
+            </div>
+
+            <div class="client pt-5 mt-3">
+              <div><span>M/Mme </span><span id="nom-client"></span></div>
+
+              <div>
+                <span>Adresse : </span><span id="adresse-client"></span>
+              </div>
+
+              <div>
+                <span>N client : </span><span id="numero-client"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fin entete du releve -->
+
+        <!-- Corps du releve -->
+        <div class="container body mt-3">
+          <div>
+            <table
+              class="table table-white table-striped table-bordered border-dark text-center"
+            >
+              <thead>
+                <tr>
+                  <th>Dates</th>
+                  <th>Operations</th>
+                  <th>Debits</th>
+                  <th>Credits</th>
+                </tr>
+                <tr>
+                  <td colspan="3" class="text-center">
+                    <span>Solde precedent</span>
+                    <span>au</span>
+                    <span id="periode-precedente"></span>
+                  </td>
+                  <th id="depot-mois-precedent"></th>
+                </tr>
+              </thead>
+              <tbody id="transacBody">
+                <tr></tr>
+              </tbody>
+
+              <tfoot>
+                <tr>
+                  <td colspan="2" class="text-start">Total des operations</td>
+                  <th class="text-center" id="total-debit" colspan=""></th>
+                  <th class="text-center" id="total-credit" colspan=""></th>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-start">
+                    <span>Solde final</span>
+                    <span id="periode-echeante"></span>
+                  </td>
+                  <th class="text-center" id="solde-final" colspan="2"></th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!-- Fin corps du releve -->
+
+        <!-- Bas du releve -->
+        <div class="container footer">
+          <table class="table table-bordered table-striped border-dark">
             <thead>
               <tr>
-                <th>Dates</th>
-                <th>Operations</th>
-                <th>Debits</th>
-                <th>Credits</th>
-              </tr>
-              <tr>
-                <td colspan="3" class="text-center">
-                  <span>Solde precedent</span>
-                  <span>au</span>
-                  <span id="jour-solde-precedent">31</span>
-                  <span id="mois-solde-precedent">janvier</span>
-                  <span id="annee-solde-precedent">2024</span>
+                <td colspan="4">
+                  Informations prealables sur les frais bancaire
                 </td>
-                <th id="depot-mois-precedent">25000</th>
+                <th class="text-center" colspan="1">montant</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>01/02/2024</td>
-                <td>Achat de telivision</td>
-                <td>15000</td>
-                <td></td>
-              </tr>
-
-              <tr>
-                <td>05/02/2024</td>
-                <td>Versement</td>
-                <td></td>
-                <td>50000</td>
-              </tr>
-
-              <tr>
-                <td>10/02/2024</td>
-                <td>Achat de fibre optique</td>
-                <td>20000</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>15/02/2024</td>
-                <td>Achat de canal</td>
-                <td>10000</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>24/02/2024</td>
-                <td>Versement</td>
-                <td></td>
-                <td>5000</td>
-              </tr>
+            <tbody id="tbodyFrais">
+              <tr></tr>
             </tbody>
             <tfoot>
               <tr>
-                <td colspan="2" class="text-start">Total des operations</td>
-                <th class="text-center" id="total-debit" colspan="">45000</th>
-                <th class="text-center" id="total-credit" colspan="">80000</th>
-              </tr>
-              <tr>
-                <td colspan="2" class="text-start">
-                  <span>Solde final</span>
-                  <span>au</span>
-                  <span id="jour-solde-final">28</span>
-                  <span id="mois-solde-final">fevrier</span>
-                  <span id="annee-solde-final">2023</span>
-                </td>
-                <th class="text-center" id="solde-final" colspan="2">35000</th>
+                <td colspan="4">Total</td>
+                <th colspan="1" class="text-center" id="total-frais">0</th>
               </tr>
             </tfoot>
           </table>
+          <div class="mb-2 text-center">
+            <span id="message"> </span>
+          </div>
         </div>
-      </div>
-      <!-- Fin corps du releve -->
 
-      <!-- Bas du releve -->
-      <div class="container footer">
-        <table class="table table-bordered table-striped border-dark">
-          <thead>
-            <tr>
-              <td colspan="4">
-                Informations prealables sur les frais bancaire
-              </td>
-              <th class="text-center" colspan="1">montant</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td colspan="4"></td>
-              <td colspan="1"></td>
-            </tr>
-            <tr>
-              <td colspan="4"></td>
-              <td colspan="1"></td>
-            </tr>
-            <tr>
-              <td colspan="4"></td>
-              <td colspan="1"></td>
-            </tr>
-            <tr>
-              <td colspan="4"></td>
-              <td colspan="1"></td>
-            </tr>
-            <tr>
-              <td colspan="4"></td>
-              <td colspan="1"></td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="4">Total</td>
-              <th colspan="1" class="text-center" id="total-frais">0</th>
-            </tr>
-          </tfoot>
-        </table>
-        <div class="mb-2">
-          <span class="message">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione
-            laboriosam doloremque officiis excepturi quisquam ab rem quis error
-            labore earum? Possimus doloremque necessitatibus unde eaque,
-            explicabo sint? Quis deserunt cum sapiente, nostrum eveniet
-            reiciendis a.
-          </span>
-        </div>
+        <!-- Bas du releve -->
       </div>
-
-      <!-- Bas du releve -->
     </div>
   </body>
+  <script src="./assets/index.js"></script>
 </html>

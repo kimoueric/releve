@@ -14,4 +14,14 @@ body{
     align-items: center;
 }
 
+.logo{
+    /* border: 2px solid black; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: start;
+    /* padding: 5px; */
+    width: 80%;
+  
+}
+
 
